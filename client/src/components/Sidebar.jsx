@@ -152,7 +152,7 @@ const Sidebar = ({
                 return(
                     <ListItem key={text} disablePadding>
                         <ListItemButton onClick={() => { 
-                            navigate('/${lcText}'); 
+                            navigate(`/${lcText}`); 
                             setActive(lcText);    
                         }}
                         sx={{
@@ -239,7 +239,7 @@ const Sidebar = ({
                                 return(
                                     <ListItem key={text} disablePadding>
                                         <ListItemButton onClick={() => { 
-                                            navigate('/${lcText}'); 
+                                            navigate(`/${lcText}`); 
                                             setActive(lcText);    
                                         }}
                                         sx={{

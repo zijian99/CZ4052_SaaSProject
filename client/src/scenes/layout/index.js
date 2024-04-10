@@ -30,8 +30,7 @@ const Layout = () => {
           setIsSidebarOpen={setIsSidebarOpen}
         />
         {/* Outlet is used for rendering the page contents */}
-        <Outlet/>
-        <p></p>
+        <Outlet />
       </Box>
     </Box>
 )};
