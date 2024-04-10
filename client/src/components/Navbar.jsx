@@ -38,7 +38,10 @@ const Navbar = ({
     const [ anchorEl, setAnchorEl ] = useState(null);
     const isOpen = Boolean(anchorEl);
     const handleClick = (event) => setAnchorEl(event.currentTarget);
-    const handleClose = () => setAnchorEl(null);
+    const handleClose = () => {
+      //Navigate back to homepage here
+      setAnchorEl(null);
+    }
 
     return (
     <AppBar
