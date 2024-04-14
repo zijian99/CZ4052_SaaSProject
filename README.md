@@ -1,7 +1,13 @@
 # CZ4052_SaaSProject
 An E-Commerce Dashboard Software-as-a-Service website application using MERN stack
 
-Access the website [here](https://ecommerce-dashboard-client-3399fs1jk-zijian99s-projects.vercel.app/)
+Access the website [here](https://ecommerce-dashboard-client-3399fs1jk-zijian99s-projects.vercel.app/)<br><br>
+
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg?style=for-the-badge)](http://www.wtfpl.net/about/)<br>
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 ## Website Preview
 <img src="https://github.com/zijian99/CZ4052_SaaSProject/assets/92379986/603fd082-5375-46ef-b050-e3620a45a0f8" height="250" width="400" alt="Original Input">
