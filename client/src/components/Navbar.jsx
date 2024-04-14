@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
     LightModeOutlined, 
     DarkModeOutlined, 
@@ -34,13 +35,15 @@ const Navbar = ({
 }) => {
     const dispatch = useDispatch();
     const theme = useTheme();
-    
+    const navigate = useNavigate();
+
     const [ anchorEl, setAnchorEl ] = useState(null);
     const isOpen = Boolean(anchorEl);
     const handleClick = (event) => setAnchorEl(event.currentTarget);
     const handleClose = () => {
       //Navigate back to homepage here
       setAnchorEl(null);
+      navigate("/");
     }
 
     return (

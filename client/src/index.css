@@ -25,3 +25,13 @@ body,
 ::-webkit-scrollbar-thumb:hover {
   background: #ffedc2;
 }
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  justify-content: center;
+  width: 100%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

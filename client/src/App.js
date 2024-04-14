@@ -16,6 +16,7 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
+import Landing from "scenes/landing";
 
 function App() {
 
@@ -30,9 +31,10 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline/>
           <Routes>
+            <Route path="/" element={<Landing/>} />
             {/* element is to make that everything inside the<Route> has the <Layout> component */}
             <Route element={<Layout/>}>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />

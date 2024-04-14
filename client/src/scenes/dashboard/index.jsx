@@ -20,6 +20,9 @@ import BreakdownChart from "components/BreakdownChart";
 import OverviewChart from "components/OverviewChart";
 import { useGetDashboardQuery } from "state/api";
 import StatBox from "components/StatBox";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable'
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -57,6 +60,48 @@ const Dashboard = () => {
     },
   ];
 
+  
+
+  const handleDownloadPDF = () => {
+    let transactionArr = []
+    data.transactions.forEach((element,index,array) => {
+      transactionArr.push([element._id,element.userId,element.createdAt,element.products.length,element.cost])
+    })
+
+    const input = document.getElementById('pdf-content'); 
+    
+    // Specify the id of the element you want to convert to PDF
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      pdf.text(7, 15, "E-commerce Dashboard Summary Report");
+      const pdfWidth = pdf.internal.pageSize.getWidth()
+      const pdfHeight = pdf.internal.pageSize.getHeight()
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth/imgWidth,pdfHeight/imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio)/2;
+      const imgY = 30;
+
+      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+      pdf.addPage();
+      pdf.text(7, 15, "Transaction Details");
+      autoTable(pdf,{
+        startY:20,
+        body: transactionArr,
+        columns: [
+          { header: 'ID', dataKey: 0 },
+          { header: 'User ID', dataKey: 1 },
+          { header: 'Created At', dataKey: 2 },
+          { header: 'No. of Products', dataKey: 3 },
+          { header: 'Cost', dataKey: 4 },
+        ],
+        //columns:[['ID','UserID','Created At','No. of Products','Total Cost']],
+      })
+      pdf.save('ecommerce-report.pdf');
+    });    
+  };
+  
   return (
     <Box m="1.5rem 2.5rem">
       <FlexBetween>
@@ -71,6 +116,7 @@ const Dashboard = () => {
               fontWeight: "bold",
               padding: "10px 20px",
             }}
+            onClick={handleDownloadPDF}
           >
             <DownloadOutlined sx={{ mr: "10px" }} />
             Download Reports
@@ -79,6 +125,7 @@ const Dashboard = () => {
       </FlexBetween>
 
       <Box
+        id="pdf-content"
         mt="20px"
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
@@ -90,6 +137,7 @@ const Dashboard = () => {
       >
         {/* ROW 1 */}
         <StatBox
+          
           title="Total Customers"
           value={data && data.totalCustomers}
           increase="+14%"
@@ -101,6 +149,7 @@ const Dashboard = () => {
           }
         />
         <StatBox
+        
           title="Sales Today"
           value={data && data.todayStats.totalSales}
           increase="+21%"
@@ -112,6 +161,7 @@ const Dashboard = () => {
           }
         />
         <Box
+          
           gridColumn="span 8"
           gridRow="span 2"
           backgroundColor={theme.palette.background.alt}
@@ -121,6 +171,7 @@ const Dashboard = () => {
           <OverviewChart view="sales" isDashboard={true} />
         </Box>
         <StatBox
+         
           title="Monthly Sales"
           value={data && data.thisMonthStats.totalSales}
           increase="+5%"
@@ -132,6 +183,7 @@ const Dashboard = () => {
           }
         />
         <StatBox
+         
           title="Yearly Sales"
           value={data && data.yearlySalesTotal}
           increase="+43%"
@@ -181,6 +233,7 @@ const Dashboard = () => {
           />
         </Box>
         <Box
+       
           gridColumn="span 4"
           gridRow="span 3"
           backgroundColor={theme.palette.background.alt}
