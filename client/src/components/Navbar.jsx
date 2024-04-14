@@ -12,7 +12,7 @@ import {
 import FlexBetween from 'components/FlexBetween';
 import { useDispatch } from 'react-redux';
 import { setMode } from 'state';
-import profileImage from "assets/profile.jpeg";
+import profileImage from "assets/profile.jpg";
 import { 
   AppBar, 
   Icon, 
@@ -43,7 +43,6 @@ const Navbar = ({
     const handleClose = () => {
       //Navigate back to homepage here
       setAnchorEl(null);
-      navigate("/");
     }
 
     return (
@@ -132,7 +131,7 @@ const Navbar = ({
                 onClose={handleClose}
                 anchorOrigin={{ vertical: "bottom", horizontal: "center"}}
               >
-                <MenuItem onClick={handleClose}>Log Out</MenuItem>
+                <MenuItem onClick={()=> navigate("/")}>Log Out</MenuItem>
               </Menu>
             </FlexBetween>
 
