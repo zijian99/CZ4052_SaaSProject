@@ -1,7 +1,7 @@
 # CZ4052_SaaSProject
 An E-Commerce Dashboard Software-as-a-Service website application using MERN stack
 
-Access the demo website [here](https://ecommerce-dashboard-client-3399fs1jk-zijian99s-projects.vercel.app/)<br><br>
+Access the demo website [here](https://ecommerce-dashboard-client.vercel.app/)<br><br>
 
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg?style=for-the-badge)](http://www.wtfpl.net/about/)<br>
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
