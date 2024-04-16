@@ -39,11 +39,13 @@ const LandingNavbar = () => {
           <FlexBetween gap="1.5rem">
           <Button
               sx={{color:theme.palette.secondary[500], fontSize: "15px", fontWeight:"bold"}}
+              onClick={()=>navigate("/")}
             >
               Home
             </Button>
             <Button
               sx={{color:theme.palette.secondary[500], fontSize: "15px", fontWeight:"bold"}}
+              onClick={()=>navigate("/pricing")}
             >
               Pricing
             </Button>

@@ -17,6 +17,7 @@ import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
 import Landing from "scenes/landing";
+import Pricing from "scenes/pricing";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <CssBaseline/>
           <Routes>
             <Route path="/" element={<Landing/>} />
+            <Route path="/pricing" element={<Pricing/>} />
             {/* element is to make that everything inside the<Route> has the <Layout> component */}
             <Route element={<Layout/>}>
               {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
