@@ -70,7 +70,7 @@ npm run dev
 > MONGO_URL='{YOURMONGODBCREDENTIAL}'
 > PORT=5001
 > ```
-> You can find your MongoDB URL(MongoDBCredential) under here:<br>
+<!--- You can find your MongoDB URL(MongoDBCredential) under here:<br>
 > 1. Step 1<br>
 > <img src="https://github.com/zijian99/CZ4052_SaaSProject/assets/92379986/2824b1e4-3c4a-4474-8d28-d1b09e8ab8df" height="250" width="400" alt="Original Input"><br>
 > 2. Step 2<br>
@@ -81,8 +81,8 @@ npm run dev
 
 <br><br><br><br>
 
-<img src="https://github.com/zijian99/CZ4052_SaaSProject/assets/92379986/125abb80-6a1e-40c3-b8b0-5a65d49c7151" width="170" height="170">
-<h6>Tired......</h6>
+<!---<img src="https://github.com/zijian99/CZ4052_SaaSProject/assets/92379986/125abb80-6a1e-40c3-b8b0-5a65d49c7151" width="170" height="170">
+<h6>Tired......</h6> ---!>
 
 
 
